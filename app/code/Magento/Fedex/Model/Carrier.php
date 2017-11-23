@@ -356,7 +356,7 @@ class Carrier extends AbstractCarrierOnline implements \Magento\Shipping\Model\C
         $r->setDestCountry($this->_countryFactory->create()->load($destCountry)->getData('iso2_code'));
 
         if ($request->getDestPostcode()) {
-            $r->setDestPostal($request->getDestPostcode());
+            $r->setDestPostal(trim($request->getDestPostcode()));
         } else {
         }
 
